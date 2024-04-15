@@ -41,6 +41,7 @@ let firstNumber;
 let operator;
 let secondNumber;
 let isDisplayingResult;
+let num1Entered;
 
 const displayScreen = document.querySelector('#calculator-screen');
 
@@ -51,6 +52,12 @@ function displayOnScreen(content)
     {
         displayScreen.textContent = "";
         isDisplayingResult = false;
+    }
+
+    if (num1Entered)
+    {
+        displayScreen.textContent = '';
+        num1Entered = false;
     }
     displayScreen.textContent += content;
     displayValue = parseInt(displayScreen.textContent);
@@ -64,8 +71,8 @@ function operatorButton(typeOfOperator)
 {
     operator = typeOfOperator;
     firstNumber = displayValue;
-    displayScreen.textContent = "";
     console.log(firstNumber);
+    num1Entered = true;
 }
 
 const operatorButtons = Array.from(document.querySelectorAll('button#operator-button'));
@@ -97,3 +104,8 @@ function resetCalculator()
 }
 const clearButton = document.querySelector("#clear-button");
 clearButton.addEventListener("click", () => resetCalculator());
+
+// left off sun apr 14, 10:25 pm
+// calculator works for the most part, but should add more functionality to operator buttons 
+// to where they continue operations with a calculated number
+// also add more style to the calculator, do extra credit stuff
