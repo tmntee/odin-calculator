@@ -1,8 +1,17 @@
 div#calculator-screen {
-    background-color: gray;
+    background-color: gainsboro;
+    width: 125px;
 }
 
 div#calculator-body {
-    background-color: gainsboro;
+    background-color: gray;
     display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 200px;
+    align-items: center;
+}
+
+button#calc-button {
+    background-color: white;
 }
