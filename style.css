@@ -8,10 +8,11 @@ div#calculator-body {
     display: flex;
     flex-direction: column;
     width: 150px;
-    height: 200px;
+    height: 125px;
     align-items: center;
 }
 
 button#calc-button {
     background-color: white;
+    width: 29px;
 }
