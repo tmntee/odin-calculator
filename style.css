@@ -1,6 +1,7 @@
 div#calculator-screen {
     background-color: gainsboro;
     width: 125px;
+    height: 16px;
 }
 
 div#calculator-body {
@@ -12,7 +13,7 @@ div#calculator-body {
     align-items: center;
 }
 
-button#calc-button {
+div#calculator-row button {
     background-color: white;
     width: 29px;
 }
