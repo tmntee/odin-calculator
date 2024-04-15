@@ -1,0 +1,8 @@
+div#calculator-screen {
+    background-color: gray;
+}
+
+div#calculator-body {
+    background-color: gainsboro;
+    display: flex;
+}
