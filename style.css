@@ -1,3 +1,8 @@
+div#container {
+    display: flex; 
+    justify-content: center;
+}
+
 div#calculator-screen {
     background-color: gainsboro;
     width: 125px;
