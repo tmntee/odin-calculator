@@ -45,4 +45,6 @@ div#calculator-row button {
     background-color: white;
     width: 75px;
     height: 65px;
+
+    font-size: 2em;
 }
