@@ -14,8 +14,17 @@ function multiply(num1, num2)
 }
 
 function divide(num1, num2)
-{
-    return Math.round(num1 / num2);
+{   
+    let quotient = num1/num2;
+
+    if (quotient % 1 === 0)
+    {
+        return quotient;
+    }
+    else
+    {
+        return quotient.toFixed(3);
+    }
 }
 
 function operate(num1, op, num2)
@@ -29,9 +38,10 @@ function operate(num1, op, num2)
         case 'multiply':
             return multiply(num1, num2);
         case 'divide':
-            if (num2 === 0)
+            if (num1 === 0 || num2 === 0)
             {
-                return 'erm impossible';
+                alert('impossible!');
+                return num2;
             }
             return divide(num1, num2);
     }
@@ -118,7 +128,6 @@ operatorButtons[3].addEventListener("click", () => operatorButton("divide"));
 function equals()
 {   
     displayScreen.textContent = operate(firstNumber, operator, secondNumber);
-    console.log(operate(firstNumber, operator, secondNumber));
     
     operator = '';
     secondNumber = '';
