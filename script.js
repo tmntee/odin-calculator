@@ -37,30 +37,51 @@ function operate(num1, op, num2)
     }
 }
 
+//pseudo code
+// enter first number
+// save first number
+// pick an operator
+// enter second number
+// save second number
+// press equals or an operator
+// -> if operator is pressed, equals is 
+
 let firstNumber;
 let operator;
 let secondNumber;
-let isDisplayingResult;
-let num1Entered;
+
+let enteringFirstNumber = false;
+let enteringSecondNumber = false;
+let firstDigit = true;
 
 const displayScreen = document.querySelector('#calculator-screen');
 
-let displayValue = displayScreen.textContent;
 function displayOnScreen(content)
 {   
-    if (isDisplayingResult)
+    if (!enteringFirstNumber && !enteringSecondNumber)
     {
-        displayScreen.textContent = "";
-        isDisplayingResult = false;
+        enteringFirstNumber = true;
     }
 
-    if (num1Entered)
+    if (firstDigit)
     {
         displayScreen.textContent = '';
-        num1Entered = false;
+        firstDigit = false;
     }
+
     displayScreen.textContent += content;
     displayValue = parseInt(displayScreen.textContent);
+
+    if (enteringFirstNumber && !enteringSecondNumber)
+    {
+        firstNumber = displayValue;
+    } 
+    else if (!enteringFirstNumber && enteringSecondNumber)
+    {   
+        secondNumber = displayValue;
+    }
+    console.log(`entering the first number: ${enteringFirstNumber} | entering the second number: ${enteringSecondNumber}`);
+    console.log(`first number: ${firstNumber} | second number: ${secondNumber}`);
 }
 
 const numericButtons = Array.from(document.querySelectorAll('#calculator-row button#num-button'));
@@ -69,10 +90,20 @@ numericButtons.map((obj) => obj.addEventListener("click", () => displayOnScreen(
 
 function operatorButton(typeOfOperator)
 {
+    if (enteringSecondNumber)
+    {
+        equals();
+    }
+
     operator = typeOfOperator;
-    firstNumber = displayValue;
-    console.log(firstNumber);
-    num1Entered = true;
+
+    if (enteringFirstNumber)
+    {
+        enteringFirstNumber = false;
+        enteringSecondNumber = true;
+        firstDigit = true;
+    }
+
 }
 
 const operatorButtons = Array.from(document.querySelectorAll('button#operator-button'));
@@ -82,18 +113,26 @@ operatorButtons[1].addEventListener("click", () => operatorButton("subtract"));
 operatorButtons[2].addEventListener("click", () => operatorButton("multiply"));
 operatorButtons[3].addEventListener("click", () => operatorButton("divide"));
 
+
+// equals button functionality
 function equals()
 {   
-    secondNumber = displayValue;
-    displayScreen.textContent = operate(firstNumber, operator, secondNumber)
-    displayValue = parseInt(displayScreen.textContent);
-    isDisplayingResult = true;
-    console.log(secondNumber);
+    displayScreen.textContent = operate(firstNumber, operator, secondNumber);
+    console.log(operate(firstNumber, operator, secondNumber));
+    
+    operator = '';
+    secondNumber = '';
+    firstDigit = true;
+    enteringFirstNumber = true;
+    enteringSecondNumber = false;
+    firstNumber = parseInt(displayScreen.textContent);
 }
 
 const equalsButton = document.querySelector('button#equals-button');
 equalsButton.addEventListener("click", () => equals());
 
+
+// clear button functionality
 function resetCalculator()
 {
     firstNumber = '';
@@ -102,10 +141,6 @@ function resetCalculator()
     displayScreen.textContent = '';
     displayValue = '';
 }
+
 const clearButton = document.querySelector("#clear-button");
 clearButton.addEventListener("click", () => resetCalculator());
-
-// left off sun apr 14, 10:25 pm
-// calculator works for the most part, but should add more functionality to operator buttons 
-// to where they continue operations with a calculated number
-// also add more style to the calculator, do extra credit stuff
