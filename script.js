@@ -156,3 +156,11 @@ function resetCalculator()
 
 const clearButton = document.querySelector("#clear-button");
 clearButton.addEventListener("click", () => resetCalculator());
+
+// left off 4/18/2024 12:59 am
+// calculator works completely, left off on extra credit section
+// on the odinproject website
+// do all extra credits, and then some
+// do each extra cred on a branch then merge if satisfactory
+// also refactor code. if you see anything that is multiple, make it a function
+// ok love u goodnight
