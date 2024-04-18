@@ -7,9 +7,21 @@ div#container {
 
 div#calculator-screen {
     background-color: gainsboro;
-    width: 310px;
-    height: 60px;
+    width: 295px;
+    height: 45px;
     margin: 25px;
+    padding: 10px;
+
+    border: solid gray 3px;
+    border-bottom: solid white 3px;
+    border-right: solid white 3px;
+    border-radius: 5px;
+
+    font-size: 3em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-wrap: nowrap;
+    text-justify: center;
+    
 }
 
 div#calculator-body {
