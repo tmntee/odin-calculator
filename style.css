@@ -32,9 +32,9 @@ div#calculator-body {
     height: 450px;
     align-items: center;
     border-radius: 20px;
-    border: solid darkgray 2px;
-    border-bottom: solid gray 12px;
-    border-right: solid gray 12px;
+    border: solid darkgray 5px;
+    border-bottom: ridge gray 12px;
+    border-right: ridge gray 12px;
 }
 
 div#calculator-row {
