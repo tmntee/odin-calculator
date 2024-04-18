@@ -1,24 +1,36 @@
 div#container {
     display: flex; 
     justify-content: center;
+    align-content: center;
+    margin-top: 50mm;
 }
 
 div#calculator-screen {
     background-color: gainsboro;
-    width: 125px;
-    height: 16px;
+    width: 310px;
+    height: 60px;
+    margin: 25px;
 }
 
 div#calculator-body {
-    background-color: gray;
+    background-color: darkgray;
     display: flex;
     flex-direction: column;
-    width: 150px;
-    height: 125px;
+    width: 350px;
+    height: 450px;
     align-items: center;
+    border-radius: 20px;
+    border: solid darkgray 2px;
+    border-bottom: solid gray 12px;
+    border-right: solid gray 12px;
+}
+
+div#calculator-row {
+    margin-bottom: 15px;
 }
 
 div#calculator-row button {
     background-color: white;
-    width: 29px;
+    width: 75px;
+    height: 65px;
 }
