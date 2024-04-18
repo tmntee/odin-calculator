@@ -58,20 +58,35 @@ button#num-button {
 }
 
 button#num-button:active {
-    border: solid rgb(114, 163, 172) 2px;
-
+    border-top: solid rgb(114, 163, 172) 2px;
+    border-left: solid rgb(114, 163, 172) 2px;
     background-color: rgb(134, 188, 197);
-
 }
 
 button#operator-button {
     background-color: orange;
+    border-top: solid rgb(255, 215, 141) 2px;
+    border-left: solid rgb(255, 215, 141) 2px;
+    border-bottom: solid rgb(204, 126, 24) 5px;
+    border-right: solid rgb(204, 126, 24) 5px;
 }
 
-button#clear-button {
-    background-color: white;
+button#operator-button:focus {
+    background-color: rgb(211, 141, 49);
+    border-top: solid rgb(204, 126, 24) 2px;
+    border-left: solid rgb(204, 126, 24) 2px;
 }
 
-button#equals-button {
-    background-color: white;
+button.misc {
+    background-color: rgb(230, 230, 230);
+    border-top: solid white 2px;
+    border-left: solid white 2px;
+    border-bottom: solid gray 5px;
+    border-right: solid gray 5px;
+}
+
+button.misc:active {
+    background-color: rgb(145, 145, 145);
+    border-top: solid gray 2px;
+    border-left: solid gray 2px;
 }
