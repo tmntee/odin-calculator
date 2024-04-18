@@ -42,9 +42,36 @@ div#calculator-row {
 }
 
 div#calculator-row button {
-    background-color: white;
     width: 75px;
     height: 65px;
+    border-radius: 10px;
 
     font-size: 2em;
+}
+
+button#num-button {
+    background-color: lightblue;
+    border-top: solid lightcyan 2px;
+    border-left: solid lightcyan 2px;
+    border-bottom: solid rgb(114, 163, 172) 5px;
+    border-right: solid rgb(114, 163, 172) 5px;
+}
+
+button#num-button:active {
+    border: solid rgb(114, 163, 172) 2px;
+
+    background-color: rgb(134, 188, 197);
+
+}
+
+button#operator-button {
+    background-color: orange;
+}
+
+button#clear-button {
+    background-color: white;
+}
+
+button#equals-button {
+    background-color: white;
 }
