@@ -140,6 +140,9 @@ function resetCalculator()
     secondNumber = '';
     displayScreen.textContent = '';
     displayValue = '';
+    enteringFirstNumber = false;
+    enteringSecondNumber = false;
+    firstDigit = true;
 }
 
 const clearButton = document.querySelector("#clear-button");
